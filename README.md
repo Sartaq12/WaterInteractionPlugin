@@ -3,7 +3,11 @@
 
 This is a guide for integrating the plugins so that you can get water interaction FX from Ninja while having the aesthetics and functionality of Oceanology.
 
-**[Preview Video](https://www.youtube.com/watch?v=R91vouwOHCw)**
+
+
+https://user-images.githubusercontent.com/37218094/228067455-8c582844-e672-4ee9-b9d3-a778edb5b34f.mp4
+
+
 
 Shader performance comparison:
 ![image3](https://user-images.githubusercontent.com/37218094/228063750-8339ddb2-451e-4046-bbeb-dc25c05646a2.png)
