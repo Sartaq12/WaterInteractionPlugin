@@ -1,0 +1,22 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "WaterInteraction",
+	"Description": "FNL+Oceanology Integration",
+	"Category": "Water",
+	"CreatedBy": "Marin Zujic",
+	"CreatedByURL": "https://marinzujic.com/",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EngineVersion": "5.1.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"Plugins": [
+		{
+			"Name": "Oceanology_Plugin",
+			"Enabled": true
+		}
+	]
+}
