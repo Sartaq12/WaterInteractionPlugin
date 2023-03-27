@@ -4,6 +4,7 @@
 This is a guide for integrating the plugins so that you can get water interaction FX from Ninja while having the aesthetics and functionality of Oceanology.
 
 
+**Preview Video:**  
 
 https://user-images.githubusercontent.com/37218094/228067455-8c582844-e672-4ee9-b9d3-a778edb5b34f.mp4
 
@@ -31,25 +32,7 @@ Also that **Oceanology 5.1.4** is already installed in your project.
 
 Clone repo or download and extract the release package
 
-## Step 2 - Oceanology Fix
-
-You need to **copy** the **QuadTree.h** provided in the files and **overwrite** the one found in your Oceanology plugin.
-
-The path is  
-_Oceanology_Plugin\Source\Oceanology_Plugin\Public\QuadTree.h_
-
-This path assumes you have Oceanology installed in the Plugins folder of your project.
-![image6](https://user-images.githubusercontent.com/37218094/228064114-dde26f95-0f66-48d8-b900-0412a678a4bc.png)
-
-The plugin was made with Oceanology in your project Plugins folder, so this is the recommended way of using it.
-
-Alternatively, your Oceanology might be installed in the Engine like it is by default from the marketplace, in that case the path is  
-_Program Files\Epic Games\UE_5.1\Engine\Plugins\Marketplace\Oceanology_Plugin\Source\Oceanology_Plugin\Public\QuadTree.h_
-
-The plugin contains a child of BP_Oceanology_Infinity, so you might have to reparent the actor when doing it this way.
-
-
-## Step 3 - Install WaterInteraction Plugin
+## Step 2 - Install WaterInteraction Plugin
 
 In the files provided **copy** the **WaterInteraction folder** to your project Plugins folder.
 
@@ -59,9 +42,7 @@ Search for “water” in the Plugins window and enable the plugin.
 ![image2](https://user-images.githubusercontent.com/37218094/228064200-7e0a647a-e3cc-4544-83af-c11e8f7d72b3.png)
 
 
-## Step 4 - Checkout the Test Map
-
-
+## Step 3 - Checkout the Test Map
 
 1. Open settings on your content browser
 2. Make sure Show Plugin Content is True
@@ -73,8 +54,6 @@ Now you can **play** and **hold LMB** to run around and confirm the **installati
 
 
 # Setup
-
-
 
 1. **Add or replace** your existing BP_Oceanology_Infinity with the **BP_Oceanology_Infinity_FluidNinja** provided in the plugin.
 2. **Open BP_TopDownCharacter** in the plugin as an example. Copy the WaterInteractionActor and WaterSplashActor components to your Player Character class
