@@ -3,6 +3,11 @@
 
 This is a guide for integrating the plugins so that you can get water interaction FX from Ninja while having the aesthetics and functionality of Oceanology.
 
+[![GitHub release](https://img.shields.io/github/v/release/sartaq12/WaterInteractionPlugin)](../../releases/latest)
+&nbsp;&nbsp;&nbsp;&nbsp;[![ReleaseDate](https://img.shields.io/github/release-date/sartaq12/WaterInteractionPlugin)](../../releases/latest)
+&nbsp;&nbsp;&nbsp;&nbsp;[![Downloads](https://img.shields.io/github/downloads/sartaq12/WaterInteractionPlugin/total)](../../releases/latest)
+&nbsp;&nbsp;&nbsp;&nbsp;[![Oceanology Discord Server](https://img.shields.io/discord/654364478493687819?label=Oceanology&logo=Oceanology)](https://discord.gg/wXgZ6n8juB)
+&nbsp;&nbsp;&nbsp;&nbsp;[![FluidNinja Discord Server](https://img.shields.io/discord/850913821240983553?label=FluidNinja&logo=FluidNinja)](https://discord.gg/ge2Fe8vDez)
 
 **Preview Video:**  
 
