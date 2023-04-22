@@ -11,7 +11,7 @@ jobs:
     - uses: oprypin/find-latest-tag@v1
       with:
         repository: Sartaq12/WaterInteractionPlugin  # The repository to scan.
-        releases-only: true  # We know that all relevant tags have a GitHub release for them.
+        releases-only: false # We know that all relevant tags have a GitHub release for them.
       id: WaterInteractionPlugin  # The step ID to refer to later.
     - run: echo "WaterInteractionPlugin is at version ${{ steps.WaterInteractionPlugin.outputs.tag }}"
     - name: Checkout repository
