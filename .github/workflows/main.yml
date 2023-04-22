@@ -20,33 +20,24 @@ jobs:
     - name: Archive WaterInteractionPlugin folder + Readme.pdf + LICENSE file
       run: |
         zip -r WaterInteractionPlugin.zip WaterInteractionPlugin README.pdf LICENSE && rm README.pdf
-    - name: Get the latest release tag and increment it
-      run: |
-        git fetch --tags --always
-        latest_tag=$(git describe --tags --abbrev=0)
-        IFS='.' read -ra ver <<< "$latest_tag"
-        new_tag="${ver[0]}.${ver[1]}.$((${ver[2]}+1))"
-        git tag "$new_tag"
-        echo "$new_tag"
-        export VERSION="$new_tag"
     - name: Create Release Draft
       uses: actions/create-release@v1.1.4
       with:
-        tag_name: ${{ env.VERSION }}
+        tag_name: Automated
         draft: true
     - name: Upload release asset
       uses: actions/upload-release-asset@v1.0.2
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: WaterInteractionPlugin-$VERSION-$GITHUB_SHA.zip
-        asset_name: WaterInteractionPlugin-$VERSION-$GITHUB_SHA.zip
+        asset_path: WaterInteractionPlugin.zip
+        asset_name: WaterInteractionPlugin.zip
         asset_content_type: application/zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Publish Release
       uses: actions/create-release@v1.1.4
       with:
-        tag_name: ${{ env.VERSION }}
+        tag_name: Automated
         draft: true
         prerelease: false
       env:
