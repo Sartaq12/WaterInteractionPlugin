@@ -22,7 +22,7 @@ jobs:
         sudo apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended pandoc pandoc-citeproc librsvg2-bin zip
     - name: Convert Readme.md to PDF
       run: |
-        pandoc README.md -o README.pdf --variable=margin-bottom:10pt
+        pandoc README.md -o README.pdf --wrap=none
     - name: Get Latest Tag
       uses: WyriHaximus/github-action-get-previous-tag@v1
   
