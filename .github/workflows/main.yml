@@ -1,11 +1,11 @@
-name: Create Release Draft
+name: Release
 run-name: ${{ github.actor }} is creating a draft release
 on:
   push:
     branches:
       - main
 jobs:
-  create_release_draft:
+  release:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
