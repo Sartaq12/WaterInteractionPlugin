@@ -27,7 +27,7 @@ jobs:
         run: pandoc -o README.pdf README.md
 
       - name: Zip files
-        run: zip -r "$FILENAME-${{ env.VERSION }}-${{ github.sha }}.zip "$FILENAME" README.pdf && rm README.pdf
+        run: zip -r "$FILENAME-$(git describe --tags --abbrev=0)-${GITHUB_SHA::8}.zip" "$FILENAME" README.pdf && rm README.pdf
 
       - name: Create Release Draft
         id: create_release
