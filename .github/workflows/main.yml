@@ -19,7 +19,7 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended pandoc zip pandoc-svg
+        sudo apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended pandoc pandoc-citeproc librsvg2-bin zip pandoc-svg
     - name: Convert Readme.md to PDF
       run: |
         pandoc README.md --filter pandoc-svg -o README.pdf --strip-trailing-arguments
