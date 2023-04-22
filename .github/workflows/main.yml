@@ -16,10 +16,10 @@ jobs:
         sudo apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended librsvg2-bin zip
     - name: Convert Readme.md to PDF
       run: |
-        rsvg-convert -f pdf -o README.pdf README.svg
+        pandoc README.md -o README.pdf
     - name: Archive WaterInteractionPlugin folder + Readme.pdf + LICENSE file
       run: |
-        zip -r WaterInteractionPlugin.zip WaterInteractionPlugin README.pdf LICENSE
+        zip -r WaterInteractionPlugin.zip WaterInteractionPlugin README.pdf LICENSE && rm README.pdf
     - name: Get the latest release tag and increment it
       run: |
         git fetch --tags
