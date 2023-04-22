@@ -1,11 +1,11 @@
-name: Release
+name: Create Release Draft
 run-name: ${{ github.actor }} is creating a draft release
 on:
   push:
     branches:
       - main
 jobs:
-  release:
+  create_release_draft:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
@@ -30,12 +30,12 @@ jobs:
         echo "$new_tag"
         export VERSION="$new_tag"
     - name: Create Release Draft
-      uses: actions/create-release-draft@v1
+      uses: actions/create-release@v1.1.4
       with:
         tag_name: ${{ env.VERSION }}
         draft: true
     - name: Upload release asset
-      uses: actions/upload-release-asset@v1.0.1
+      uses: actions/upload-release-asset@v1.0.2
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: WaterInteractionPlugin-$VERSION-$GITHUB_SHA.zip
@@ -44,7 +44,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Publish Release
-      uses: actions/create-release@v1
+      uses: actions/create-release@v1.1.4
       with:
         tag_name: ${{ env.VERSION }}
         draft: true
