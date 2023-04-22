@@ -27,7 +27,7 @@ jobs:
         run: pandoc -o README.pdf README.md
 
       - name: Zip files
-        run: zip -r "$FILENAME-$(git describe --tags --abbrev=0)"-"${GITHUB_SHA::8}".zip "$FILENAME" README.pdf && rm README.pdf
+        run: zip -r "$FILENAME-${{ env.VERSION }}-${{ github.sha }}.zip "$FILENAME" README.pdf && rm README.pdf
 
       - name: Create Release Draft
         id: create_release
@@ -46,8 +46,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ env.FILENAME }}-"$(git describe --tags --abbrev=0)"-"${GITHUB_SHA::8}".zip
-          asset_name: ${{ env.FILENAME }}-"$(git describe --tags --abbrev=0)"-"${GITHUB_SHA::8}".zip
+          asset_path: ${{ env.FILENAME }}-${{ env.VERSION }}-${{ github.sha }}.zip
+          asset_name: ${{ env.FILENAME }}-${{ env.VERSION }}-${{ github.sha }}.zip
           asset_content_type: application/zip
 
       - name: Update Release Draft
