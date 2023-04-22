@@ -15,6 +15,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+
       - name: Install dependencies
         run: |
           sudo apt-get update && sudo apt-get install -y \
@@ -28,14 +33,26 @@ jobs:
       - name: Zip files
         run: zip -r "$FILENAME-$(git describe --tags --abbrev=0)-$GITHUB_SHA.zip" "$FILENAME" README.pdf && rm README.pdf
 
+      - name: Get Latest Release Tag
+        id: get_latest_tag
+        run: echo ::set-output name=tag::$(git describe --abbrev=0 --tags)
+
+      - name: Increment Tag
+        id: increment_tag
+        run: echo ::set-output name=tag::$(echo ${{ steps.get_latest_tag.outputs.tag }} | awk -F. '{$NF = $NF + 1;} 1' | sed 's/ /./g')
+
+      - name: Set Output Tag
+        id: set_output_tag
+        run: echo ::set-output name=tag::${{ steps.increment_tag.outputs.tag }}
+
       - name: Create Release Draft
         id: create_release
         uses: actions/create-release@v1.1.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.VERSION }}
-          release_name: Release ${{ env.VERSION }}
+          tag_name: ${{ steps.set_output_tag.outputs.tag }}
+          release_name: Release ${{ steps.set_output_tag.outputs.tag }}
           draft: true
 
       - name: Upload Release Asset
@@ -45,10 +62,20 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ env.FILENAME }}-$(git describe --tags --abbrev=0)-$GITHUB_SHA.zip
-          asset_name: ${{ env.FILENAME }}-$(git describe --tags --abbrev=0)-$GITHUB_SHA.zip
+          asset_path: ${{ env.FILENAME }}-${{ steps.set_output_tag.outputs.tag }}.zip
+          asset_name: ${{ env.FILENAME }}-${{ steps.set_output_tag.outputs.tag }}.zip
           asset_content_type: application/zip
 
+      - name: Create Tag
+        run: git tag -a v${{ steps.set_output_tag.outputs.tag }} -m "Version ${{ steps.set_output_tag.outputs.tag }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push Tag
+        run: git push origin v${{ steps.set_output_tag.outputs.tag }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
       - name: Update Release Draft
         uses: peter-evans/create-pull-request@v5.0.0
         env:
