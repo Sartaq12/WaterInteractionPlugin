@@ -30,7 +30,7 @@ jobs:
 
       - name: Create Release Draft
         id: create_release
-        uses: actions/create-release@v1.0.6
+        uses: actions/create-release@v1.1.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -50,7 +50,7 @@ jobs:
           asset_content_type: application/zip
 
       - name: Update Release Draft
-        uses: peter-evans/create-pull-request@v3.7.0
+        uses: peter-evans/create-pull-request@v5.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
