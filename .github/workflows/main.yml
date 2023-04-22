@@ -46,8 +46,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ env.FILENAME }}-${{ env.VERSION }}-${{ github.sha }}.zip
-          asset_name: ${{ env.FILENAME }}-${{ env.VERSION }}-${{ github.sha }}.zip
+          asset_path: ${{ env.FILENAME }}-`git describe --tags --abbrev=0`-${{ env.GITHUB_SHA }}.zip
+          asset_name: ${{ env.FILENAME }}-`git describe --tags --abbrev=0`-${{ env.GITHUB_SHA }}.zip
           asset_content_type: application/zip
 
       - name: Update Release Draft
