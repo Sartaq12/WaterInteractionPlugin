@@ -22,6 +22,8 @@ jobs:
         zip -r WaterInteractionPlugin.zip WaterInteractionPlugin README.pdf LICENSE && rm README.pdf
     - name: Create Release Draft
       uses: actions/create-release@v1.1.4
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: Automated
         draft: true
