@@ -1,0 +1,72 @@
+name: Create Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create_release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Get latest release tag
+      id: get_latest_tag
+      uses: actions/github-script@v4
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const { data } = await github.repos.listReleases({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+          });
+          const latestTag = data[0].tag_name;
+          return latestTag;
+
+    - name: Increment release tag
+      id: increment_tag
+      run: echo "::set-output name=tag::v$(( $(echo ${{ steps.get_latest_tag.outputs.result }} | sed 's/v//') + 1 ))"
+
+    - name: Install LaTeX
+      run: sudo apt-get install -y texlive-full
+
+    - name: Create PDF
+      run: |
+        cd WaterInteractionPlugin
+        pandoc -o README.pdf README.md
+
+    - name: Create Zip File
+      run: |
+        sudo apt-get update
+        sudo apt-get install zip
+        cd WaterInteractionPlugin
+        zip -r ../WaterInteractionPlugin.zip . -x "*.pdf"
+        mv ../WaterInteractionPlugin.zip ..
+
+    - name: Delete PDF
+      run: |
+        cd WaterInteractionPlugin
+        rm README.pdf
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.increment_tag.outputs.tag }}
+        release_name: Release ${{ steps.increment_tag.outputs.tag }}
+        draft: true
+        prerelease: false
+
+    - name: Upload Release Asset
+      id: upload-release-asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./WaterInteractionPlugin.zip
+        asset_name: WaterInteractionPlugin.zip
+        asset_content_type: application/zip
