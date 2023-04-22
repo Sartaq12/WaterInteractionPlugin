@@ -21,12 +21,15 @@ jobs:
       run: |
         zip -r WaterInteractionPlugin.zip WaterInteractionPlugin README.pdf LICENSE && rm README.pdf
     - name: Create Release Draft
+      id: create_release
       uses: actions/create-release@v1.1.4
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: Automated
+        tag_name: v1.0.0
+        release_name: Release v1.0.0
         draft: true
+        prerelease: false
     - name: Upload release asset
       uses: actions/upload-release-asset@v1.0.2
       with:
@@ -39,7 +42,7 @@ jobs:
     - name: Publish Release
       uses: actions/create-release@v1.1.4
       with:
-        tag_name: Automated
+        tag_name: v1.0.0
         draft: true
         prerelease: false
       env:
