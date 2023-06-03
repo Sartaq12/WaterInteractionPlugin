@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
 	"Version": 1,
-	"VersionName": "1.1.7",
+	"VersionName": "1.1.8",
 	"FriendlyName": "WaterInteractionPlugin",
 	"Description": "FluidNinjaLIVE + Oceanology Integration",
 	"Category": "Ocean",
