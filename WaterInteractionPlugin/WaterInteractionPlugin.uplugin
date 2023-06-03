@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
 	"Version": 1,
-	"VersionName": "1.1.5",
+	"VersionName": "1.1.6",
 	"FriendlyName": "WaterInteractionPlugin",
 	"Description": "FluidNinjaLIVE + Oceanology Integration",
 	"Category": "Ocean",
@@ -13,13 +13,6 @@
 	"EngineVersion": "5.1.0",
 	"CanContainContent": true,
 	"Installed": true,
-	"Modules": [
-		{
-			"Name": "WaterInteractionPlugin",
-			"Type": "Editor",
-			"LoadingPhase": "Default"
-		}
-	],
 	"Plugins": [
 		{
 			"Name": "Oceanology_Plugin",

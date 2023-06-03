@@ -31,7 +31,7 @@ This guide is assuming you have a clean **FluidNinjaLIVE 1.8.51.5** present in y
 ![image5](https://user-images.githubusercontent.com/37218094/228064034-16f4efe9-3fba-4f96-9657-b387f64d1960.png)
 
 And that you did its migration guide(mainly for setting up FluidTrace collision channel).
-Also that **Oceanology 5.1.4** is already installed in your project.
+Also that **Oceanology 5.1.5** is already installed in your project.
 
 
 ## Step 1 - Clone Repo
@@ -61,11 +61,11 @@ Now you can **play** and **hold LMB** to run around and confirm the **installati
 
 # Setup
 
-1. **Add or replace** your existing BP_Oceanology_Infinity with the **BP_Oceanology_Infinity_FluidNinja** provided in the plugin.
+1. **Add or replace** your existing Oceanology with the **Oceanology_FluidNinja** provided in the plugin.
 2. **Open BP_TopDownCharacter** in the plugin as an example. Copy the nodes in **Begin Play** event to your Player Character class
 3. **Very Important!**  
 ![image1](https://user-images.githubusercontent.com/37218094/228065541-597cd52e-ce37-4668-b330-ff9c6aeb85e6.png)
-Open NinjaLive_Area_Water blueprint, select NinjaLiveComponent, search for a variable called “Force Trace Mesh Vertical Position” and make sure it is the same value as the Location.Z of the BP_Oceanology_Infinity_FluidNinja in your level. Do the same for NinjaLive_Water_Splashes, only increment it by -20  
+Open NinjaLive_Area_Water blueprint, select NinjaLiveComponent, search for a variable called “Force Trace Mesh Vertical Position” and make sure it is the same value as the Location.Z of the Oceanology_FluidNinja in your level. Do the same for NinjaLive_Water_Splashes, only increment it by -20  
 
 4. Optional:
 ![image4](https://user-images.githubusercontent.com/37218094/228064433-684e2eaf-a6ea-4b5c-86fa-b63aee890275.png)
