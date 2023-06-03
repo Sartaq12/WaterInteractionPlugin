@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
 	"Version": 1,
-	"VersionName": "1.1.6",
+	"VersionName": "1.1.7",
 	"FriendlyName": "WaterInteractionPlugin",
 	"Description": "FluidNinjaLIVE + Oceanology Integration",
 	"Category": "Ocean",
@@ -10,7 +10,7 @@
 	"DocsURL": "https://github.com/Sartaq12/WaterInteractionPlugin/blob/main/README.md",
 	"MarketplaceURL": "https://github.com/Sartaq12/WaterInteractionPlugin",
 	"SupportURL": "https://discord.gg/wXgZ6n8juB",
-	"EngineVersion": "5.1.0",
+	"EngineVersion": "5.2.0",
 	"CanContainContent": true,
 	"Installed": true,
 	"Plugins": [
