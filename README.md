@@ -11,8 +11,7 @@ This is a guide for integrating the plugins so that you can get water interactio
 
 **Preview Video:**  
 
-https://user-images.githubusercontent.com/37218094/233792477-e69c7597-6968-4b8a-9c5b-c39fa885f1f5.mp4
-
+https://github.com/Sartaq12/WaterInteractionPlugin/assets/37218094/21d838fa-7ea8-4cc1-99b3-70558a320262
 
 Shader performance comparison:
 ![image3](https://user-images.githubusercontent.com/37218094/228063750-8339ddb2-451e-4046-bbeb-dc25c05646a2.png)
