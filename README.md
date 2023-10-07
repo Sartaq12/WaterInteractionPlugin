@@ -26,7 +26,7 @@ It costs ~0.5ms on my Ryzen 9 3950X
 https://www.unrealengine.com/marketplace/en-US/product/fluidninja-live    
 https://www.unrealengine.com/marketplace/en-US/product/oceanology   
 
-This guide is assuming you have a clean **FluidNinjaLIVE 1.8.51.5** present in your content folder like this:
+This guide is assuming you have a clean **FluidNinjaLIVE 1.9.51.0** present in your content folder like this:
 ![image5](https://user-images.githubusercontent.com/37218094/228064034-16f4efe9-3fba-4f96-9657-b387f64d1960.png)
 
 And that you did its migration guide(mainly for setting up FluidTrace collision channel).
@@ -58,7 +58,7 @@ Search for “water” in the Plugins window and enable the plugin.
 Now you can **play** and **hold LMB** to run around and confirm the **installation went through successfully!**
 
 
-# Setup
+# Integration to your project
 
 1. **Add or replace** your existing Oceanology with the **Oceanology_FluidNinja** provided in the plugin.
 2. **Open BP_TopDownCharacter** in the plugin as an example. Copy the nodes in **Begin Play** event to your Player Character class
