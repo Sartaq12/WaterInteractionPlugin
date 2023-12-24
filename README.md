@@ -5,7 +5,6 @@ This is a guide for integrating the plugins so that you can get water interactio
 
 [![GitHub release](https://img.shields.io/github/v/release/sartaq12/WaterInteractionPlugin)](../../releases/latest)
 &nbsp;&nbsp;&nbsp;&nbsp;[![ReleaseDate](https://img.shields.io/github/release-date/sartaq12/WaterInteractionPlugin)](../../releases/latest)
-&nbsp;&nbsp;&nbsp;&nbsp;[![Downloads](https://img.shields.io/github/downloads/sartaq12/WaterInteractionPlugin/total)](../../releases/latest)
 &nbsp;&nbsp;&nbsp;&nbsp;[![Oceanology Discord Server](https://img.shields.io/discord/654364478493687819?label=Oceanology&logo=Oceanology)](https://discord.gg/wXgZ6n8juB)
 &nbsp;&nbsp;&nbsp;&nbsp;[![FluidNinja Discord Server](https://img.shields.io/discord/850913821240983553?label=FluidNinja&logo=FluidNinja)](https://discord.gg/ge2Fe8vDez)
 
@@ -30,7 +29,7 @@ This guide is assuming you have a clean **FluidNinjaLIVE 1.9.51.0** present in y
 ![image5](https://user-images.githubusercontent.com/37218094/228064034-16f4efe9-3fba-4f96-9657-b387f64d1960.png)
 
 And that you did its migration guide(mainly for setting up FluidTrace collision channel).
-Also that **Oceanology 5.1.5** is already installed in your project.
+Also that **Oceanology 5.1.6** is already installed in your project.
 
 
 ## Step 1 - Clone Repo
