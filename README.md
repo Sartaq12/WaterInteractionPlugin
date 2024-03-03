@@ -10,7 +10,8 @@ This is a guide for integrating the plugins so that you can get water interactio
 
 **Preview Video:**  
 
-https://github.com/Sartaq12/WaterInteractionPlugin/assets/37218094/21d838fa-7ea8-4cc1-99b3-70558a320262
+https://github.com/Sartaq12/WaterInteractionPlugin/assets/37218094/8bafb819-21a0-41db-92ba-40e0e308b819
+
 
 Shader performance comparison:
 ![image3](https://user-images.githubusercontent.com/37218094/228063750-8339ddb2-451e-4046-bbeb-dc25c05646a2.png)
@@ -25,11 +26,11 @@ It costs ~0.5ms on my Ryzen 9 3950X
 https://www.unrealengine.com/marketplace/en-US/product/fluidninja-live    
 https://www.unrealengine.com/marketplace/en-US/product/oceanology   
 
-This guide is assuming you have a clean **FluidNinjaLIVE 1.9.51.0** present in your content folder like this:
+This guide is assuming you have a clean **FluidNinjaLIVE 1.9.53** present in your content folder like this:
 ![image5](https://user-images.githubusercontent.com/37218094/228064034-16f4efe9-3fba-4f96-9657-b387f64d1960.png)
 
 And that you did its migration guide(mainly for setting up FluidTrace collision channel).
-Also that **Oceanology 5.1.6** is already installed in your project.
+Also that **Oceanology 5.4.0** is already installed in your project.
 
 
 ## Step 1 - Clone Repo
