@@ -26,11 +26,11 @@ It costs ~0.5ms on my Ryzen 9 3950X
 https://www.unrealengine.com/marketplace/en-US/product/fluidninja-live    
 https://www.unrealengine.com/marketplace/en-US/product/oceanology   
 
-This guide is assuming you have a clean **FluidNinjaLIVE 1.9.53.3** present in your content folder like this:
+This guide is assuming you have a clean **FluidNinjaLIVE 1.9.54.3** present in your content folder like this:
 ![image5](https://user-images.githubusercontent.com/37218094/228064034-16f4efe9-3fba-4f96-9657-b387f64d1960.png)
 
 And that you did its migration guide(mainly for setting up FluidTrace collision channel).
-Also that **Oceanology 5.4.0** is already installed in your project.
+Also that **Oceanology 5.7.0** is already installed in your project.
 
 
 ## Step 1 - Clone Repo
