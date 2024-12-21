@@ -30,7 +30,8 @@ This guide is assuming you have a clean **FluidNinjaLIVE 1.9.54.3** present in y
 ![image5](https://user-images.githubusercontent.com/37218094/228064034-16f4efe9-3fba-4f96-9657-b387f64d1960.png)
 
 And that you did its migration guide(mainly for setting up FluidTrace collision channel).
-Also that **Oceanology 5.7.0** is already installed in your project.
+Also that **Oceanology Next-Gen 1.0.0** is already installed in your project.
+If you're using Oceanology Legacy, you can still use pre UE5.5 releases.
 
 
 ## Step 1 - Clone Repo
